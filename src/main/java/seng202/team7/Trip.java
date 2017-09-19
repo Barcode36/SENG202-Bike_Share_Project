@@ -92,7 +92,7 @@ public class Trip extends Location implements Data, java.io.Serializable {
      * @param gender gander of cyclist
      * @param dataGroup datagroup string for sorting within tables
      */
-    public Trip(Station startStation, Station endStation, int duration, String startDate, String endDate, String userType, int birthYear, String gender, String dataGroup)
+    public Trip(Station startStation, Station endStation, int duration, String startDate, String endDate, String userType, int birthYear, int gender, String dataGroup)
     {
         this.startStation = startStation;
         this.startStationID = startStation.getId();
@@ -109,9 +109,9 @@ public class Trip extends Location implements Data, java.io.Serializable {
         }
         this.userType = userType;
         this.age = StaticVariables.currentYear - birthYear;
-        if (gender == "0") {
+        if (gender == 0) {
             this.gender = "Unknown";
-        } else if (gender == "1") {
+        } else if (gender == 1 ) {
             this.gender = "Male";
         } else {
             this.gender = "Female";
@@ -122,7 +122,7 @@ public class Trip extends Location implements Data, java.io.Serializable {
     }
 
     /**
-     * Todo make birthyear take either age or birthyear. if number is greater than 1000 is birthyear else is age??
+     * Todo make birthyear take either age or birthyear. if number is greater than 1000 is birthyear else is age?? FIX GENDER HERE
      * @param startStation station object at start of route
      * @param endStation station object at nd of route
      * @param duration duration of trip in seconds
@@ -133,7 +133,7 @@ public class Trip extends Location implements Data, java.io.Serializable {
      * @param gender gender of cyclist
      * @param dataGroup datagroup string for sorting within tables
      */
-    public Trip(Station startStation, Station endStation, int duration, Date startDate, Date endDate, String userType, int birthYear, String gender, String dataGroup)
+    public Trip(Station startStation, Station endStation, int duration, Date startDate, Date endDate, String userType, int birthYear, int gender, String dataGroup)
     {
         this.startStation = startStation;
         this.startStationID = startStation.getId();
@@ -144,7 +144,13 @@ public class Trip extends Location implements Data, java.io.Serializable {
         this.endDate = endDate;
         this.userType = userType;
         this.age = StaticVariables.currentYear - birthYear;
-        this.gender = gender;
+        if (gender == 0) {
+            this.gender = "Unknown";
+        } else if (gender == 1 ) {
+            this.gender = "Male";
+        } else {
+            this.gender = "Female";
+        }
         this.dataGroup = dataGroup;
         this.distance = findDistance();
     }

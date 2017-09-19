@@ -60,13 +60,28 @@
                       </items>
                     </ComboBox>
                     <Button mnemonicParsing="false" onAction="#viewRecord" text="View Selected Retailer" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                    <Text fx:id="noRetailerSelected" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select a retailer to view" visible="false" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                    <Text fx:id="noRetailerSelected" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select a retailer to view" visible="false" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                    <SplitPane dividerPositions="0.6627450980392157" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="257.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                      <items>
+                        <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="32.0" prefWidth="166.0">
+                          <children>
+                            <TextField fx:id="searchEntry" maxWidth="-Infinity" prefWidth="166.0" promptText="Name" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="32.0" prefWidth="83.0">
+                          <children>
+                            <Button mnemonicParsing="false" onAction="#search" prefHeight="32.0" text="Search" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                          </children>
+                        </AnchorPane>
+                      </items>
+                    </SplitPane>
                   </children>
                   <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   </columnConstraints>
                   <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />

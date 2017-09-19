@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="mainBorderPane" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="seng202.team7.MainWindowController">
+<BorderPane fx:id="mainBorderPane" prefHeight="500.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.team7.MainWindowController">
   <bottom>
     <HBox BorderPane.alignment="CENTER" />
   </bottom>
   <left>
-    <TreeView fx:id="navigationTree" BorderPane.alignment="CENTER" />
+    <TreeView fx:id="navigationTree" prefHeight="450.0" prefWidth="175.0" BorderPane.alignment="CENTER" />
   </left>
   <top>
     <MenuBar BorderPane.alignment="CENTER">
@@ -21,7 +19,11 @@
             <MenuItem mnemonicParsing="false" text="Exit" />
           </items>
         </Menu>
+            <Menu mnemonicParsing="false" text="Help" />
       </menus>
     </MenuBar>
   </top>
+   <center>
+      <AnchorPane fx:id="centerAnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>

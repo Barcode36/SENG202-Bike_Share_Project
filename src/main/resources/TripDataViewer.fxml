@@ -4,27 +4,20 @@
 <?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.*?>
 
-<fx:root type="javafx.scene.layout.AnchorPane" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="seng202.team7.TripDataViewerController">
+<fx:root id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1000.0" type="javafx.scene.layout.AnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.team7.TripDataViewerController">
   <children>
-    <AnchorPane id="tableViewer" fx:id="dataViewer" prefHeight="400.0" prefWidth="1100.0" visible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <AnchorPane id="tableViewer" fx:id="dataViewer" prefHeight="400.0" prefWidth="1100.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <SplitPane dividerPositions="0.3123861566484517" focusTraversable="true" prefHeight="400.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <SplitPane dividerPositions="0.25" focusTraversable="true" prefHeight="400.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <items>
-            <AnchorPane maxWidth="-1.0" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="340.0">
+            <AnchorPane maxWidth="-Infinity" minHeight="185.0" minWidth="205.0" prefHeight="400.0" prefWidth="265.0" SplitPane.resizableWithParent="false">
               <children>
-                <GridPane minWidth="-1.0" prefHeight="398.0" prefWidth="340.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="350.0" minHeight="185.0" minWidth="205.0" prefHeight="400.0" prefWidth="265.0" vgap="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                   <children>
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter By:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="0">
+                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter Trips By:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="0">
                       <font>
                         <Font size="26.0" />
                       </font>
@@ -70,18 +63,21 @@
                     <Text fx:id="noTripSelected" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select a trip to view" visible="false" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
                   </children>
                   <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="80.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="140.0" />
                   </columnConstraints>
                   <rowConstraints>
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="-Infinity" minHeight="25.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="-Infinity" minHeight="25.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="-Infinity" minHeight="25.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="-Infinity" minHeight="25.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="-Infinity" minHeight="25.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="-Infinity" minHeight="25.0" prefHeight="40.0" vgrow="SOMETIMES" />
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
                 </GridPane>
               </children>
             </AnchorPane>
@@ -89,11 +85,11 @@
               <children>
                 <TableView fx:id="tripDataTable" onMouseEntered="#addLoader" prefHeight="400.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                   <columns>
-                    <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="150.0" text="Start" fx:id="startColumn" />
-                    <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="150.0" text="End" fx:id="endColumn" />
-                    <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="150.0" text="Duration" fx:id="durationColumn" />
-                    <TableColumn prefWidth="150.0" text="Gender" fx:id="genderColumn" />
-                    <TableColumn prefWidth="150.0" text="Userpass" fx:id="userTypeColumn" />
+                    <TableColumn fx:id="startColumn" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="150.0" text="Start" />
+                    <TableColumn fx:id="endColumn" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="150.0" text="End" />
+                    <TableColumn fx:id="durationColumn" editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="150.0" text="Duration" />
+                    <TableColumn fx:id="genderColumn" prefWidth="150.0" text="Gender" />
+                    <TableColumn fx:id="userTypeColumn" prefWidth="150.0" text="Userpass" />
                   </columns>
                 </TableView>
               </children>

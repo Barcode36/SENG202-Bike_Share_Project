@@ -34,16 +34,27 @@ public class DatabaseTester {
         {
             System.out.println("testing update: " + w.getCity());
         }
-        /*
+
         long sumDuration = SQLAnalytics.totalGroupTripDuration("test");
         long sumDistance = SQLAnalytics.totalGroupTripDistance("test");
-        int genderTrips = SQLAnalytics.totalGenderTrips("Female","test");
+        int genderTripsF = SQLAnalytics.totalGenderTrips("Female","");
+        int genderTripsM = SQLAnalytics.totalGenderTrips("Male","");
         int userTrips = SQLAnalytics.totalUserTypeTrips("Customer","");
-        System.out.println(sumDuration);
-        System.out.println(sumDistance);
-        System.out.println(genderTrips);
-        System.out.println(userTrips);
-        */
+        //System.out.println(sumDuration);
+        //System.out.println(sumDistance);
+        System.out.println("By gender:");
+        System.out.println(genderTripsF);
+        System.out.println(genderTripsM);
+        //System.out.println(userTrips);
+
+
+
+        databaseRetriever.testQueryTrip();
+
+        System.out.println("BY TIME: "+SQLAnalytics.totalTimeTrips("00:00:00","23:00:00",""));
+        System.out.println("BY Dist: "+SQLAnalytics.totalDistTrips(0,10000,""));
+        System.out.println("BY Dur: "+SQLAnalytics.totalDurTrips(0,10000,""));
+
 
 
         /*
@@ -105,9 +116,9 @@ public class DatabaseTester {
 
 
 
-        Trip t1 = new Trip(s1,s2,4345,"2015-10-01 00:22:42","2015-10-01 00:38:42", "customer", 1990, "M", "kl");
-        Trip t2 = new Trip(s2,s1,4345,"2015-10-01 00:20:42","2015-10-01 00:29:42", "CUSTOMER", 1934, "F", "test");
-        Trip t3 = new Trip(s1,s2,4345,"2015-10-01 00:22:42","2015-10-01 00:38:42", "Customer", 1990, "M", "test");
+        Trip t1 = new Trip(s1,s2,4345,"2015-10-01 05:22:42","2015-10-01 00:38:42", "customer", 1990, 0, "kl");
+        Trip t2 = new Trip(s2,s1,4345,"2015-10-01 00:20:42","2015-10-01 00:29:42", "CUSTOMER", 1934, 1, "test");
+        Trip t3 = new Trip(s1,s2,4345,"2015-10-01 00:22:42","2015-10-01 00:38:42", "Subscriber", 1990, 2, "test");
 
 
         data.add(w1);

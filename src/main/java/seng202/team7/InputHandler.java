@@ -155,7 +155,7 @@ public class InputHandler {
                         dataGroup = "default";
                         String userType = fields[12];
                         int bikeID = Integer.parseInt(fields[11]);                     //not in constructor, do we want it?
-                        String gender = fields[14];
+                        int gender = Integer.parseInt(fields[14].trim());
                         int birthYear = Integer.parseInt(fields[13]);
                         String startDate = fields[1];                //need to implement having this as Date type? not sure whats wanted
                         String endDate = fields[2];                //need to implement having this as Date type? not sure whats wanted

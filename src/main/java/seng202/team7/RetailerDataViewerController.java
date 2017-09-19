@@ -256,7 +256,7 @@ public class RetailerDataViewerController implements Initializable {
         sTypeEntry.getSelectionModel().select(retailer.getTypeID());
     }
 
-    public void confirmEdit(){
+    public void confirmEdit() {
         Retailer retailer = filteredRetailerList.get(currentRetailerIndex);
         retailer.setName(nameEntry.getText());
         retailer.setPAddress(addressEntry.getText());
@@ -266,5 +266,9 @@ public class RetailerDataViewerController implements Initializable {
         retailer.setTypeID(sTypeEntry.getValue());
         dbUpdater.updateRetailer(retailer);
         viewRecord();
+    }
+
+    public void search() {
+
     }
 }

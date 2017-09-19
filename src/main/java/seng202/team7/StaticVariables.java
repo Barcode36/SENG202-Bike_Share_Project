@@ -89,6 +89,14 @@ public class StaticVariables {
     }
 
 
+    /**
+     * Calculates distance in meters between two lat lon points
+     * @param lat1 lat point1
+     * @param lon1 lon point1
+     * @param lat2 lat point2
+     * @param lon2 lon point2
+     * @return distance in meters as double
+     */
     public static double calculateDistance(double lat1, double lon1, double lat2, double lon2)
     {
         double radiusOfEarth = 6372; //radius of earth in km
@@ -104,6 +112,11 @@ public class StaticVariables {
         return d;
     }
 
+    /**
+     * Converts degrees to radians. Helper for calculateDistance
+     * @param degree degrees to convert
+     * @return radian out as double
+     */
     private static double degreeToRadian(double degree)
     {
         return degree* (Math.PI/180);

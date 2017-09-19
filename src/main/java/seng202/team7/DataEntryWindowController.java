@@ -17,77 +17,44 @@ public class DataEntryWindowController {
 
     public Button uploadcsvButton;
     public Button addDataButton;
-
     //@FXML
     //private TextField fileName;
 
-    @FXML
-    private ComboBox dataEntryComboBox;
+    @FXML private ComboBox dataEntryComboBox;
 
+    // Trip
+    @FXML private TextField startTime;
+    @FXML private TextField endTime;
+    @FXML private TextField bikeID;
+    @FXML private ComboBox userTypeComboBox;
+    @FXML private TextField birthYear;
+    @FXML private TextField gender;
+    @FXML private TextField startStationID;
+    @FXML private TextField endStationID;
 
-    //trip
-    @FXML
-    private TextField startTime;
-    @FXML
-    private TextField endTime;
-    @FXML
-    private TextField bikeID;
-    @FXML
-    private ComboBox userTypeComboBox;
-    @FXML
-    private TextField birthYear;
-    @FXML
-    private TextField gender;
-    @FXML
-    private TextField startStationID;
-    @FXML
-    private TextField endStationID;
+    // Wifi
+    @FXML private TextField provider;
+    @FXML private TextField typeWifi;
+    @FXML private TextField locationWifi;
+    @FXML private TextField cityWifi;
+    @FXML private TextField borough;
+    @FXML private TextField SSID;
+    @FXML private TextField remarks;
+    @FXML private TextField longitude;
+    @FXML private TextField latitude;
 
-
-
-    //wifi
-    @FXML
-    private TextField provider;
-    @FXML
-    private TextField typeWifi;
-    @FXML
-    private TextField locationWifi;
-    @FXML
-    private TextField cityWifi;
-    @FXML
-    private TextField borough;
-    @FXML
-    private TextField SSID;
-    @FXML
-    private TextField remarks;
-    @FXML
-    private TextField longitude;
-    @FXML
-    private TextField latitude;
-
-
-
-    //retailer
-    @FXML
-    private TextField name;
-    @FXML
-    private TextField ZIP;
-    @FXML
-    private TextField state;
-    @FXML
-    private TextField cityRetailer;
-    @FXML
-    private TextField pAddress;
-    @FXML
-    private TextField sAddress;
-    @FXML
-    private TextField typeID;
-    @FXML
-    private TextField typeRetailer;
-
+    // Retailer
+    @FXML private TextField name;
+    @FXML private TextField ZIP;
+    @FXML private TextField state;
+    @FXML private TextField cityRetailer;
+    @FXML private TextField pAddress;
+    @FXML private TextField sAddress;
+    @FXML private TextField typeID;
+    @FXML private TextField typeRetailer;
 
     /**
-     * loads a file of data from a csv file name provided
+     * Loads a file of data from a csv file name provided
      * @param event
      */
     public void uploadcsvButton(ActionEvent event) {
@@ -96,7 +63,6 @@ public class DataEntryWindowController {
         ArrayList<Data> toAdd = null;
 
         String dataTypeAdded = (String ) dataEntryComboBox.getValue();
-
 
         /*
         String csvFile = fileName.getText();
@@ -110,7 +76,6 @@ public class DataEntryWindowController {
 
         csvFile = file.toString();
 
-
         try {
             toAdd =  toParse.loadCSV(csvFile, dataTypeAdded);
         } catch (IOException | NullPointerException e) {
@@ -121,7 +86,7 @@ public class DataEntryWindowController {
     }
 
     /**
-     * loads manually inputted data and adds to database
+     * Loads manually inputted data and adds to database
      * @param event
      */
     public void addDataButton(ActionEvent event) {
@@ -140,7 +105,7 @@ public class DataEntryWindowController {
                     String bikeID2 = bikeID.getText();
                     String userType2 = (String ) userTypeComboBox.getValue();
                     int birthYear2 = Integer.parseInt(birthYear.getText());
-                    String gender2 = gender.getText();
+                    int gender2 = Integer.parseInt(gender.getText().trim());
                     int startStationID2 = Integer.parseInt(startStationID.getText());
                     int endStationID2 = Integer.parseInt(endStationID.getText());
 
@@ -175,7 +140,6 @@ public class DataEntryWindowController {
                     System.out.println(gender2);
                     System.out.println(startStationID2);
                     System.out.println(endStationID2);
-
 
                     Trip trip = new Trip(startStation, endStation, duration, startTime2, endTime2, userType2, birthYear2, gender2, "default");
                     if (toTest.checkValidity(trip) == true) {
@@ -245,8 +209,6 @@ public class DataEntryWindowController {
             System.out.println("Not enough data inputted, maybe wrong data type selected?");
         }
 
-
         dataUploader.addData(toAdd);
-
     }
 }

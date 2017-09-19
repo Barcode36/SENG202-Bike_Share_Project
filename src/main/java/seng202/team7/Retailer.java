@@ -9,8 +9,6 @@ import java.util.Map;
  * Last edited 05/09/17
  */
 public class Retailer extends Location implements Data, java.io.Serializable{
-
-
     /**
      * SQL tablename
      */

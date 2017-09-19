@@ -77,9 +77,10 @@ public class SQLAnalytics {
     }
 
     /**
-     * @param gender
-     * @param datagroup
-     * @return
+     * Returns the total number of trips done by a certain gender can specify a data group to use
+     * @param gender gender to search for ("Male", "Female", "Other")
+     * @param datagroup datagroup to look for. if "" will match everything
+     * @return integer of number of that gender
      */
     public static int totalGenderTrips(String gender, String datagroup)
     {
@@ -116,6 +117,12 @@ public class SQLAnalytics {
         return trips;
     }
 
+    /**
+     * Calculates the total number of trips done by a certain user type with specific datagroup
+     * @param userType usertype to search for ("Customer", "Subscriber")
+     * @param datagroup datagroup to look for. If "" will match all
+     * @return integer of number of trips by usertype
+     */
     public static int totalUserTypeTrips(String userType, String datagroup)
     {
         int trips = 0;
@@ -139,7 +146,104 @@ public class SQLAnalytics {
             }
 
         } catch (SQLException e){
-            System.out.println("SQLAnalytic Error");
+            System.out.println("SQLAnalytic Error totalUserTrips");
+            System.out.println(e.getMessage());
+        }
+
+        return trips;
+    }
+
+
+    public static int totalTimeTrips(String startTime, String endTime,String datagroup)
+    {
+        int trips = 0;
+        String sql;
+
+        if(datagroup != ""){
+            sql = "SELECT COUNT(*) AS sum FROM " + Trip.tableName
+                    + " WHERE datagroup = \""+datagroup+"\" \n" +
+                    " AND STRFTIME('%H', startTime) < \"" +endTime+"\" \n"
+                    + "AND STRFTIME('%H',startTime) > \"" + startTime+"\";";
+        } else {
+            sql = "SELECT COUNT(*) AS sum FROM " + Trip.tableName
+                    + " WHERE startTime BETWEEN \""+startTime+"\" AND \""+endTime+"\";";
+        }
+
+        try (Connection conn = DatabaseHandler.connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)) {
+
+            while (rs.next()){
+                trips = rs.getInt("sum");
+            }
+
+        } catch (SQLException e){
+            System.out.println("SQLAnalytic Error totalTimeTrips");
+            System.out.println(e.getMessage());
+        }
+
+        return trips;
+    }
+
+
+    public static int totalDistTrips(double lowDist, double highDist, String datagroup)
+    {
+        int trips = 0;
+        String sql;
+
+        if(datagroup != ""){
+            sql = "SELECT COUNT(*) AS sum FROM " + Trip.tableName
+                    + " WHERE datagroup = \""+datagroup+"\" \n" +
+                    " AND distance < " +highDist+" \n"
+                    + "AND distance > " + lowDist+";";
+        } else {
+            sql = "SELECT COUNT(*) AS sum FROM " + Trip.tableName
+                    + " WHERE distance < " +highDist+" \n"
+                    + "AND distance > " + lowDist+";";
+        }
+
+        try (Connection conn = DatabaseHandler.connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)) {
+
+            while (rs.next()){
+                trips = rs.getInt("sum");
+            }
+
+        } catch (SQLException e){
+            System.out.println("SQLAnalytic Error totalDistTrips");
+            System.out.println(e.getMessage());
+        }
+
+        return trips;
+    }
+
+    public static int totalDurTrips(int lowDur, int highDur, String datagroup)
+    {
+        int trips = 0;
+        String sql;
+
+        if(datagroup != ""){
+            sql = "SELECT COUNT(*) AS sum FROM " + Trip.tableName
+                    + " WHERE datagroup = \""+datagroup+"\" \n" +
+                    " AND duration < " +highDur+" \n"
+                    + "AND duration > " + lowDur+";";
+        } else {
+            sql = "SELECT COUNT(*) AS sum FROM " + Trip.tableName
+                    + " WHERE duration < " +highDur+" \n"
+                    + "AND duration > " + lowDur+";";
+        }
+
+        try (Connection conn = DatabaseHandler.connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)) {
+
+            while (rs.next()){
+                trips = rs.getInt("sum");
+            }
+
+        } catch (SQLException e){
+            System.out.println("SQLAnalytic Error totalDurTrips");
             System.out.println(e.getMessage());
         }
 

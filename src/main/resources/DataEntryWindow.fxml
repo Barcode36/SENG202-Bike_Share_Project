@@ -11,9 +11,9 @@
 <?import javafx.collections.FXCollections?>
 
 
-<fx:root type="javafx.scene.layout.AnchorPane" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.team7.DataEntryWindowController">
+<fx:root type="javafx.scene.layout.AnchorPane" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.team7.DataEntryWindowController" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
    <children>
-      <GridPane layoutY="-1.0" prefHeight="400.0" prefWidth="1100.0">
+      <GridPane layoutY="-1.0" prefHeight="400.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="76.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="74.0" />

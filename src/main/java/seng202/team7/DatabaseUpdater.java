@@ -34,16 +34,12 @@ public class DatabaseUpdater {
         }
     }
 
-
-
-
     /**
      * Method adds a single Wifi object to the wifi table
      * @param wifi Wifi to be added to the database
      */
     public void insertWifi(Wifi wifi)
     {
-
         String sql = "INSERT INTO "+Wifi.tableName+" ("+Wifi.columns[0]+", "+Wifi.columns[1]+", "+Wifi.columns[2]+", "+Wifi.columns[3]+", "+Wifi.columns[4]+", "+Wifi.columns[5]+", "+Wifi.columns[6]+", "+Wifi.columns[7]+", "+Wifi.columns[8]+", "+Wifi.columns[9]+", "+Wifi.columns[10]+", "+Wifi.columns[11]+") VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -57,7 +53,6 @@ public class DatabaseUpdater {
         }catch(Exception e){
             e.printStackTrace();
         }
-
 
         try (Connection conn = DatabaseHandler.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -77,9 +72,8 @@ public class DatabaseUpdater {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("wifi added");
+        System.out.println("Wifi added");
     }
-
 
     /**
      * Adds a single station to the station to the database
@@ -112,11 +106,11 @@ public class DatabaseUpdater {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("station added");
+        System.out.println("Station added");
     }
 
     /**
-     * adds a retailer to the database
+     * Adds a retailer to the database
      * @param retailer retailer object to be added
      */
     public void insertRetailer(Retailer retailer)
@@ -153,7 +147,7 @@ public class DatabaseUpdater {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("retailer added");
+        System.out.println("Retailer added");
     }
 
     /**
@@ -202,7 +196,6 @@ public class DatabaseUpdater {
             oosStartDate.close();
             oosEndDate.close();
 
-
             //Tiding up -- Closing bos's
             bosTrip.close();
             bosStartStation.close();
@@ -210,7 +203,7 @@ public class DatabaseUpdater {
             bosStartDate.close();
             bosEndDate.close();
 
-        }catch(Exception e){
+        } catch(Exception e){
             e.printStackTrace();
         }
 
@@ -237,9 +230,8 @@ public class DatabaseUpdater {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("trip added");
+        System.out.println("Trip added");
     }
-
 
     /**
      * Deletes Wifi object based off its hashcode as id
@@ -251,20 +243,19 @@ public class DatabaseUpdater {
         try(Connection conn = DatabaseHandler.connect();
             PreparedStatement pstmt = conn.prepareStatement(sql)){
         pstmt.setInt(1, wifi.hashCode());
-    } catch (SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
-    }
+        }
     }
 
     /**
-     * Updates a wifi object by deleting it then readding it
+     * Updates a wifi object by deleting it then reading it
      * @param wifi wifi object to 'update'
      */
     public void updateWifi(Wifi wifi)
     {
         deleteWifi(wifi);
         insertWifi(wifi);
-
     }
 
     /**
@@ -290,9 +281,7 @@ public class DatabaseUpdater {
     {
         deleteRetailer(retailer);
         insertRetailer(retailer);
-
     }
-
 
     /**
      * Deletes Station object based off its id
@@ -317,7 +306,6 @@ public class DatabaseUpdater {
     {
         deleteStation(station);
         insertStation(station);
-
     }
 
     /**
@@ -343,10 +331,7 @@ public class DatabaseUpdater {
     {
         deleteTrip(trip);
         insertTrip(trip);
-
     }
-
-
 
     /**
      * Attempt to use update however is not working at the stage
@@ -384,7 +369,6 @@ public class DatabaseUpdater {
             e.printStackTrace();
         }
 
-
         try (Connection conn = DatabaseHandler.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
@@ -405,8 +389,6 @@ public class DatabaseUpdater {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("wifi updated");
-
+        System.out.println("Wifi updated");
     }
-
 }
