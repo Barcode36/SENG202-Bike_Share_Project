@@ -1,5 +1,6 @@
 package seng202.team7;
 
+import com.sun.javafx.webkit.WebConsoleListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Worker;
@@ -147,11 +148,20 @@ public class MapViewerWindowController implements Initializable {
                 "SI",
                 "None"
         );
+        WebConsoleListener.setDefaultListener(new WebConsoleListener() {
+            @Override
+            public void messageAdded(WebView webView, String message, int lineNumber, String sourceId) {
+                System.out.println("Console: [" + sourceId + ":" + lineNumber + "] " + message);
+            }
+        });
+
+
+
     }
 
     public void displayClicked()
     {
-        webEngine.executeScript("loadWifi();");
+        //webEngine.executeScript("loadWifi();");
         webEngine.executeScript("loadRetailers();");
     }
 }
