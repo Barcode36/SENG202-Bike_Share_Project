@@ -9,10 +9,14 @@
   </left>
   <top>
     <MenuBar maxHeight="25.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="0.0" stylesheets="@../Stylesheets/MainStyle.css" BorderPane.alignment="CENTER">
-        <Menu mnemonicParsing="false" text="File">
-            <MenuItem fx:id="mainMenuExitButton" mnemonicParsing="false" text="Exit" />
-        </Menu>
-            <Menu fx:id="mainMenuHelpButton" mnemonicParsing="false" text="Help" />
+       <menus>
+           <Menu mnemonicParsing="false" text="File" visible="false">
+              <items>
+                  <MenuItem fx:id="mainMenuExitButton" mnemonicParsing="false" text="Exit" />
+              </items>
+           </Menu>
+               <Menu fx:id="mainMenuHelpButton" mnemonicParsing="false" text="Help" visible="false" />
+       </menus>
     </MenuBar>
   </top>
    <center>

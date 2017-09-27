@@ -85,7 +85,7 @@ public class MainWindowController implements Initializable{
 
         // Analytics branch
         TreeItem<String> analyticsBranch = makeBranch("Analytics", root);
-        makeBranch("Map View", analyticsBranch);
+        //makeBranch("Map View", analyticsBranch);
         makeBranch("Graph View", analyticsBranch);
 
         // Raw Data Viewer branch
